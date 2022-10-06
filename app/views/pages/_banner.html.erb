@@ -2,6 +2,7 @@
   <div class="container">
     <h1>Feltretox SAS | Textiles no tejidos</h1>
     <p>Bienvenido a la plataforma interna de tu organización</p>
-    <a class="btn btn-primary" href="#">Iniciar sesión</a>
+    <%= link_to "Iniciar sesión", new_user_session_path, class: "btn btn-primary" %>
+    <%= link_to "Registrar", new_user_registration_path, class: "btn btn-primary" %>
   </div>
 </div>
