@@ -14,3 +14,6 @@
         <b>Tipo:</b> <%= @reference.tipo %>
     </li>
   </ul>
+  <%= link_to "Editar", edit_reference_path(@reference), class: "btn btn-primary"%>
+  <%= link_to "Eliminar", reference_path(@reference.id),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>

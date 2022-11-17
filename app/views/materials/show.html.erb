@@ -1,0 +1,14 @@
+<h1>materials#show</h1>
+<p>Find me in app/views/materials/show.html.erb</p>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">
+        <b>Código:</b> <%= @material.code %>
+    </li>
+    <li class="list-group-item">
+        <b>Nombre:</b> <%= @material.name %>
+    </li>
+
+  </ul>
+  <%= link_to "Editar", edit_material_path(@material), class: "btn btn-primary"%>
+  <%= link_to "Eliminar", material_path(@material.id),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger" %>

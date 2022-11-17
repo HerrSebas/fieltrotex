@@ -3,8 +3,8 @@ class CreateMaterials < ActiveRecord::Migration[7.0]
     create_table :materials do |t|
       t.string :code
       t.string :name
-      t.float :quantity
-
+      t.string :tipo
+      t.string :color
       t.timestamps
     end
   end
