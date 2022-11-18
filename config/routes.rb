@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :references
   resources :materials
   resources :bales, only: [:index, :show, :update, :edit, :new, :create]
+  resources :mixtures, only: [:index, :new, :create]
   # Defines the root path route ("/")
   # root "articles#index"
 end

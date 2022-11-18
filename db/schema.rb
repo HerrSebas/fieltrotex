@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_17_193313) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_18_171451) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,6 +46,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_17_193313) do
   create_table "mixtures", force: :cascade do |t|
     t.float "weight"
     t.bigint "material_id", null: false
+    t.bigint "reference_id", null: false
     t.bigint "turn_id", null: false
     t.bigint "line_id", null: false
     t.bigint "user_id", null: false
@@ -53,6 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_17_193313) do
     t.datetime "updated_at", null: false
     t.index ["line_id"], name: "index_mixtures_on_line_id"
     t.index ["material_id"], name: "index_mixtures_on_material_id"
+    t.index ["reference_id"], name: "index_mixtures_on_reference_id"
     t.index ["turn_id"], name: "index_mixtures_on_turn_id"
     t.index ["user_id"], name: "index_mixtures_on_user_id"
   end
@@ -121,6 +123,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_17_193313) do
   add_foreign_key "bales", "materials"
   add_foreign_key "bales", "turns"
   add_foreign_key "bales", "users"
+  add_foreign_key "mixtures", "\"references\"", column: "reference_id"
   add_foreign_key "mixtures", "lines"
   add_foreign_key "mixtures", "materials"
   add_foreign_key "mixtures", "turns"

@@ -1,0 +1,7 @@
+<%= simple_form_for @bale do |f| %>
+  <%= f.input :weight %>
+  <%= f.association :material %>
+  <%= f.association :turn, as: :radio_buttons, label_method: :number, value_method: :id %>
+  <%= f.association :line, as: :radio_buttons, label_method: :number, value_method: :id %>
+  <%= f.button :submit , class: "btn btn-primary" %>
+<% end %>

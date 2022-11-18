@@ -1,0 +1,29 @@
+<h1>Pacas#index</h1>
+<p>Find me in app/views/bales/index.html.erb</p>
+<%= link_to "Agregar paca", new_bale_path, class:"btn btn-primary" %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Peso</th>
+      <th scope="col">Material</th>
+      <th scope="col">Turno</th>
+      <th scope="col">Linea</th>
+      <th scope="col">Operario</th>
+      <th scope="col">Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bales.each do |bale| %>
+    <tr>
+      <th scope="row"><%= bale.id %></th>
+      <td><%= bale.weight %></td>
+      <td><%= bale.material.name %></td>
+      <td><%= bale.turn.number %></td>
+      <td><%= bale.line.number %></td>
+      <td><%= bale.user.name %></td>
+      <td><%= bale.created_at.to_date %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

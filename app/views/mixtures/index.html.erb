@@ -1,0 +1,31 @@
+<h1>mezclas#index</h1>
+<p>Find me in app/views/mixtures/index.html.erb</p>
+<%= link_to "Agregar mezcla", new_mixture_path, class:"btn btn-primary" %>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Peso</th>
+      <th scope="col">Material</th>
+      <th scope="col">Referencia</th>
+      <th scope="col">Turno</th>
+      <th scope="col">Linea</th>
+      <th scope="col">Operario</th>
+      <th scope="col">Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @mixtures.each do |mixture| %>
+    <tr>
+      <th scope="row"><%= mixture.id %></th>
+      <td><%= mixture.weight %></td>
+      <td><%= mixture.material.name %></td>
+      <td><%= mixture.reference.code %></td>
+      <td><%= mixture.turn.number %></td>
+      <td><%= mixture.line.number %></td>
+      <td><%= mixture.user.name %></td>
+      <td><%= mixture.created_at.to_date %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
